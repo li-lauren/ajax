@@ -5,9 +5,12 @@
 //evt is the default funciton that reloads the page, so we need to prevent the default
 function showFortune(evt) {
     evt.preventDefault();
-    $.get("/fortune", (res) => {
-        $("#fortune-text").html(res);
-    })
+    // $.get("/fortune", (res) => {
+    //     $("#fortune-text").html(res);
+    // })
+
+    // shorter way to get info and replace html
+    $("#fortune-text").load("/fortune")
     // TODO: get the fortune and show it in the #fortune-text div
 }
 
