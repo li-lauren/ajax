@@ -42,11 +42,15 @@ $("#weather-form").on('submit', showWeather);
 
 function orderMelons(evt) {
     evt.preventDefault();
+
+    let formData = $('#order-form').serialize()
+    console.log(formData)
     
-    let formData = {
-        "qty": $("#qty-field").val(),
-        "melon_type": $("#melon-type-field").val()
-    }
+    // longer way to extract form data
+    // let formData = {
+    //     "qty": $("#qty-field").val(),
+    //     "melon_type": $("#melon-type-field").val()
+    // }
     
     $.post("/order-melons.json", formData, (res) => {
         console.log(res)
